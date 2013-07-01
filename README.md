@@ -1,13 +1,14 @@
 PHP classes for Wialon Remote API
 =================================
 
-`Wialon` - allows to perform any Wialon Remote API requests according to [documentation](http://sdk.wialon.com/wiki/en/sidebar/remoteapi/remoteapi). [cUrl](http://www.php.net/manual/en/intro.curl.php) required to communicate with Wialon.
+`Wialon` - allows to perform any Wialon Remote API requests according to [documentation](http://sdk.wialon.com/wiki/en/sidebar/remoteapi/remoteapi). [cUrl](http://www.php.net/manual/en/intro.curl.php) required.
+
 `WialonError` - simple convert Wialon error codes to text messages.
 
 Usage
 -----
 
-```
+```PHP
 	include('wialon.php');
 	$wialon_api = new Wialon();
 	$result = $wialon_api->login('wialon_test','test');
