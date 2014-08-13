@@ -1,4 +1,4 @@
-<?
+<?php
 	/* Classes for working with Wialon RemoteApi using PHP
 	*
 	* License:
