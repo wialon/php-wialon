@@ -80,8 +80,14 @@
 		* return - server response
 		*/
 		public function login($user='', $password='') {
-			$params = '{"user":"'.$user.'","password":"'.$password.'"}';
-			$result = $this->core_login($params);
+			
+		        $data = array(
+		            'user'     => urlencode($user),
+		            'password' => urlencode($password),
+		        );
+
+        		$result = $this->core_login(json_encode($data));
+        		
 			$json_result = json_decode($result, true);
 			if(isset($json_result['eid']))
 				$this->sid = $json_result['eid'];
