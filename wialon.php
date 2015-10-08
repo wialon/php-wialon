@@ -5,7 +5,7 @@
 	* The MIT License (MIT)
 	*
 	* Copyright:
-	* 2002-2013 Gurtam, http://gurtam.com
+	* 2002-2015 Gurtam, http://gurtam.com
 	*/
 	
 	/** Wialon RemoteApi wrapper Class
@@ -79,19 +79,18 @@
 		* password - password
 		* return - server response
 		*/
-		public function login($user='', $password='') {
-			
-		        $data = array(
-		            'user'     => urlencode($user),
-		            'password' => urlencode($password),
-		        );
+		public function login($token) {
+			$data = array(
+				'token' => urlencode($token),
+			);
 
-        		$result = $this->core_login(json_encode($data));
-        		
+			$result = $this->token_login(json_encode($data));
+
 			$json_result = json_decode($result, true);
-			if(isset($json_result['eid']))
+			if(isset($json_result['eid'])) {
 				$this->sid = $json_result['eid'];
-			
+			}
+
 			return $result;
 		}
 		

@@ -11,7 +11,10 @@ Usage
 ```PHP
 	include('wialon.php');
 	$wialon_api = new Wialon();
-	$result = $wialon_api->login('wialon_test','test');
+
+	// old username and password login is deprecated, use token login
+	$token = 'Your token here';
+	$result = $wialon_api->login($token);
 	$json = json_decode($result, true);
 	if(!isset($json['error'])){
 		echo $wialon_api->core_search_item('{"id":717359,"flags":0x1}');
@@ -21,7 +24,8 @@ Usage
 	}
 ```
 
-API Documentation
+Documentation
 -----------------
 
 [Wialon Remote Api documentation](http://sdk.wialon.com/wiki/en/sidebar/remoteapi/apiref/apiref "Remote Api")
+[New authorization way](http://sdk.wialon.com/wiki/en/local/remoteapi/apiref/login/login)
