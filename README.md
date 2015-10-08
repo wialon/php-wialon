@@ -27,5 +27,5 @@ Usage
 Documentation
 -----------------
 
-[Wialon Remote Api documentation](http://sdk.wialon.com/wiki/en/sidebar/remoteapi/apiref/apiref "Remote Api")
+[Wialon Remote Api documentation](http://sdk.wialon.com/wiki/en/sidebar/remoteapi/apiref/apiref "Remote Api")  
 [New authorization way](http://sdk.wialon.com/wiki/en/local/remoteapi/apiref/login/login)
