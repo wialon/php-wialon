@@ -62,7 +62,7 @@
 				CURLOPT_URL => $url,
 				CURLOPT_RETURNTRANSFER => 1,
 				CURLOPT_POST => 1,
-				CURLOPT_POSTFIELDS => stripslashes(utf8_encode($str))
+				CURLOPT_POSTFIELDS => $str
 			);
 			curl_setopt_array($ch, $options);
 			
