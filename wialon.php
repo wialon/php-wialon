@@ -40,11 +40,18 @@
 		* args - JSON string with request parameters
 		*/
 		public function call($action, $args){
-			
+
 			$url = $this->base_api_url;
-			
+
+			if (stripos($action, 'unit_group') === 0) {
+				$svc = $action;
+				$svc[mb_strlen('unit_group')] = '/';
+			} else {
+				$svc = preg_replace('\'_\'', '/', $action, 1);
+			}
+
 			$params = array(
-				'svc'=> preg_replace('\'_\'', '/', $action, 1),
+				'svc'=> $svc,
 				'params'=> $args,
 				'sid'=> $this->sid
 			);
