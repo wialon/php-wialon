@@ -60,9 +60,8 @@
 			foreach ($all_params as $k => $v) {
 				if(mb_strlen($str)>0)
 					$str .= '&';
-				$str .= $k.'='.( is_object($v) ? json_encode($v) : $v);
+				$str .= $k.'='.urlencode(is_object($v) || is_array($v)  ? json_encode($v) : $v);
 			}
-			
 			/* cUrl magic */
 			$ch = curl_init();
 			$options = array(
