@@ -32,7 +32,7 @@
 			return $this->sid;
 		}
 		/** update extra parameters */
-		public function update_extra_params($params){
+		public function update_extra_params($extra_params){
 			$this->default_params = array_replace($this->default_params, $extra_params);
 		}
 		/** RemoteAPI request performer
