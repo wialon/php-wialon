@@ -18,7 +18,7 @@
 		
 		/// METHODS
 		/** constructor */
-		function __construct($scheme = 'http', $host = 'hst-api.wialon.com', $port = '', $sid = '', $extra_params = array()) {
+		function __construct($scheme = 'https', $host = 'hst-api.wialon.com', $port = '', $sid = '', $extra_params = array()) {
 			$this->sid = '';
 			$this->default_params = array_replace(array(), (array)$extra_params);
 			$this->base_api_url = sprintf('%s://%s%s/wialon/ajax.html?', $scheme, $host, mb_strlen($port)>0?':'.$port:'');
